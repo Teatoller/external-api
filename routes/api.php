@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('json-api', [ApiController::class, 'index']);
+
+// Route::get('posts-api', [PostController::class, 'index']);
+// Route::get('show-post-api', [PostController::class, 'show']);
+
+Route::resource('posts-api', PostController::class);
